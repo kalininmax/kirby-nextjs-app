@@ -1,9 +1,9 @@
-import { getAlbumItem } from '@/api/photo';
+import { getAlbumItem, getAlbums } from '@/api/photo';
 import Picture from '@/components/Picture';
 
 import styles from '@/layouts/AlbumLayout.module.scss';
 
-export default async function Page({ params }) {
+const Page = async ({ params }) => {
   const { result: album } = await getAlbumItem(params.slug);
   const {
     content: { title, subheadline, text, tags },
@@ -41,4 +41,15 @@ export default async function Page({ params }) {
       </ul>
     </>
   );
-}
+};
+
+const generateStaticParams = async () => {
+  const { result: photos } = await getAlbums();
+
+  return photos.map((photo) => ({
+    slug: photo.slug,
+  }));
+};
+
+export { generateStaticParams };
+export default Page;
