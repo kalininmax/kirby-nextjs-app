@@ -1,0 +1,70 @@
+@import '@/styles/mixins';
+@import '@/styles/constants';
+
+.album {
+  position: relative;
+  padding-block: rem(48);
+}
+
+.albumContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.albumHeader {
+  font-size: rem(32);
+  line-height: 1.25;
+}
+
+.albumTitle {
+  margin: 0;
+  font: inherit;
+}
+.albumSubtitle {
+  margin: 0;
+  color: var(--color-grey);
+}
+
+.albumTags {
+  margin-bottom: 0;
+  font-size: rem(16);
+}
+
+.albumGallery {
+  list-style: none;
+  line-height: 0;
+  padding: 0;
+  margin: 0;
+  columns: 1;
+  column-gap: rem(24);
+
+  li {
+    display: block;
+    margin-bottom: rem(24);
+    break-inside: avoid;
+  }
+}
+
+.albumsList {
+  position: relative;
+  padding-block: rem(48);
+}
+
+.albumsListTitle {
+  margin: 0;
+  margin-bottom: rem(48);
+  font-size: rem(32);
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+.albumLink {
+  display: grid;
+  row-gap: rem(16);
+}
+
+@media (min-width: $tablet) {
+  .albumGallery {
+    columns: 2;
+  }
+}

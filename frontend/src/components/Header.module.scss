@@ -1,4 +1,5 @@
 @import '@/styles/mixins';
+@import '@/styles/constants';
 
 .header {
   position: relative;
@@ -12,13 +13,13 @@
 
 .nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: rem(10);
+  column-gap: rem(16);
 }
 
 .navList {
   display: flex;
-  gap: rem(10);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -41,5 +42,21 @@
   min-height: rem(50);
   &:hover {
     opacity: 0.7;
+  }
+}
+
+@media (max-width: $mobile) {
+  .nav {
+    justify-content: center;
+  }
+  .navList {
+    width: 100%;
+    > * {
+      flex-grow: 1;
+    }
+  }
+  .navLink {
+    padding: 0 rem(8);
+    justify-content: center;
   }
 }

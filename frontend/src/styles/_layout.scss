@@ -1,9 +1,16 @@
 .page {
-  --container-max-width: #{rem(1920)};
-  --container-padding: #{rem(16)};
+  --container-max-width: #{rem(1440)};
+  --container-padding: #{rem(32)};
+
+  --color-grey: #777;
+
+  height: 100%;
 
   &__body {
     position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100%;
     margin: 0;
   }
 }
@@ -11,4 +18,33 @@
 .container {
   width: min(var(--container-max-width), 100% - (var(--container-padding) * 2));
   margin-inline: auto;
+}
+
+.grid {
+  --columns: 12;
+  --gutter: #{rem(24)};
+  display: grid;
+  grid-gap: var(--gutter);
+  grid-template-columns: 1fr;
+  list-style: none;
+  margin-block: 0;
+  padding: 0;
+  > .column {
+    margin-bottom: var(--gutter);
+  }
+}
+
+@media (min-width: $tablet) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+    & > .column {
+      grid-column: span var(--columns);
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .page {
+    --container-padding: #{rem(16)};
+  }
 }

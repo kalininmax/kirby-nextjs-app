@@ -1,0 +1,8 @@
+@import '@/styles/mixins';
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  font-size: rem(24);
+}

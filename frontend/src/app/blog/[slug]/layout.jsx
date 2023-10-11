@@ -1,7 +1,7 @@
-import PostLayout from '@/layouts/PostLayout';
+import MainLayout from '@/layouts/MainLayout';
 
 const Layout = ({ children }) => {
-  return <PostLayout>{children}</PostLayout>;
+  return <MainLayout>{children}</MainLayout>;
 };
 
 export default Layout;

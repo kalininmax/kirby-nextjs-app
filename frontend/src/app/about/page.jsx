@@ -1,11 +1,11 @@
 import MainLayout from '@/layouts/MainLayout';
 
-const Contacts = () => {
+const About = () => {
   return (
     <MainLayout>
-      <h1>Contacts</h1>
+      <h1>About</h1>
     </MainLayout>
   );
 };
 
-export default Contacts;
+export default About;

@@ -13,13 +13,18 @@ const Header = () => {
           </Link>
           <ul className={styles.navList}>
             <li>
+              <Link className={styles.navLink} href="/photography">
+                Photography
+              </Link>
+            </li>
+            <li>
               <Link className={styles.navLink} href="/blog">
                 Blog
               </Link>
             </li>
             <li>
-              <Link className={styles.navLink} href="/contacts">
-                Contacts
+              <Link className={styles.navLink} href="/about">
+                About us
               </Link>
             </li>
           </ul>

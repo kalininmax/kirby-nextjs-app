@@ -1,4 +1,7 @@
-const API_URL = 'http://kirby-nextjs-app.infinityfreeapp.com/api/kql';
-// const API_URL = 'http://localhost:8000/api/kql';
+const API_URL = 'http://kirby-nextjs-app.infinityfreeapp.com/api/query';
+// const API_URL = 'http://localhost:8008/api/query';
 
-export { API_URL };
+const username = 'maxim.kalinin@sborkaproject.com';
+const password = '.fRuQPYfahg3wbF';
+
+export { API_URL, username, password };
