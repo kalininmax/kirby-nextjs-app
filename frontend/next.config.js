@@ -3,8 +3,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'kalininmax.temp.swtest.ru',
+        protocol: process.env.PROTOCOL,
+        hostname: process.env.HOSTNAME,
         pathname: '/media/**',
       },
     ],
