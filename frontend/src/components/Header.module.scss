@@ -1,0 +1,45 @@
+@import '@/styles/mixins';
+
+.header {
+  position: relative;
+  color: white;
+  background-color: teal;
+}
+
+.container {
+  display: grid;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+}
+
+.navList {
+  display: flex;
+  gap: rem(10);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navLink {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  min-height: rem(50);
+  padding: 0 rem(16);
+  &:hover {
+    background-color: rgb(52, 132, 132);
+  }
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  min-height: rem(50);
+  &:hover {
+    opacity: 0.7;
+  }
+}
