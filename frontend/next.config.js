@@ -4,8 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'http',
-        hostname: 'localhost',
-        port: '8008',
+        hostname: 'kalininmax.temp.swtest.ru',
         pathname: '/media/**',
       },
     ],
