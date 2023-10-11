@@ -1,21 +1,50 @@
-.DS_Store
-.env
-node_modules
-vendor
+# System files
+# ------------
 
-# Kirby
+Icon
+.DS_Store
+
+# Temporary files
+# ---------------
+
+/media/*
+!/media/index.html
+
+# Lock files
+# ---------------
+
 .lock
-/public/media/*
-!/public/media/index.html
-/storage/accounts/*
-!/storage/accounts/.gitkeep
-/storage/cache/*
-!/storage/cache/.gitkeep
-# /storage/content/*
-# !/storage/content/.gitkeep
-/storage/logs/*
-!/storage/logs/.gitkeep
-/storage/sessions/*
-!/storage/sessions/.gitkeep
+
+# Editors
+# (sensitive workspace files)
+# ---------------------------
+*.sublime-workspace
+/.vscode
+/.idea
+
+# -------------SECURITY-------------
+# NEVER publish these files via Git!
+# -------------SECURITY-------------
+
+# Cache Files
+# ---------------
+
+/site/cache/*
+!/site/cache/index.html
+
+# Accounts
+# ---------------
+
+/site/accounts/*
+!/site/accounts/index.html
+
+# Sessions
+# ---------------
+
+/site/sessions/*
+!/site/sessions/index.html
+
+# License
+# ---------------
+
 /site/config/.license
-/site/plugins/*

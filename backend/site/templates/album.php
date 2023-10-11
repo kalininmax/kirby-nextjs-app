@@ -1,24 +1,47 @@
 <?php
+/*
+  Templates render the content of your pages.
 
-/** @var \Kirby\Cms\Page $page */
+  They contain the markup together with some control structures
+  like loops or if-statements. The `$page` variable always
+  refers to the currently active page.
 
-$data = [
-  'title' => $page->title()->value(),
-  'subheadline' => $page->subheadline()->value(),
-  'text' => $page->text()->value(),
-  'gallery' => $page
-    ->images()
-    ->sortBy('sort', 'filename')
-    ->map(fn ($file) => [
-      'resized' => [
-        'url' => ($file->resize(800)?->toArray() ?? [])['url'] ?? ''
-      ],
-      'width' => $file->width(),
-      'height' => $file->height(),
-      'url' => $file->url(),
-      'alt' => $file->alt()->value()
-    ])
-    ->values()
-];
+  To fetch the content from each field we call the field name as a
+  method on the `$page` object, e.g. `$page->title()`.
 
-echo \Kirby\Data\Json::encode($data);
+  This example template makes use of the `$gallery` variable defined
+  in the `album.php` controller (/site/controllers/album.php)
+
+  Snippets like the header and footer contain markup used in
+  multiple templates. They also help to keep templates clean.
+
+  More about templates: https://getkirby.com/docs/guide/templates/basics
+*/
+?>
+<?php snippet('header') ?>
+<article>
+  <?php snippet('intro') ?>
+  <div class="grid">
+
+    <div class="column" style="--columns: 4">
+      <div class="text">
+        <?= $page->text() ?>
+      </div>
+    </div>
+
+    <div class="column" style="--columns: 8">
+      <ul class="album-gallery">
+        <?php foreach ($gallery as $image): ?>
+        <li>
+          <a href="<?= $image->url() ?>" data-lightbox>
+            <figure class="img" style="--w:<?= $image->width() ?>;--h:<?= $image->height() ?>">
+              <img src="<?= $image->resize(800)->url() ?>" alt="<?= $image->alt()->esc() ?>">
+            </figure>
+          </a>
+        </li>
+        <?php endforeach ?>
+      </ul>
+    </div>
+
+</article>
+<?php snippet('footer') ?>

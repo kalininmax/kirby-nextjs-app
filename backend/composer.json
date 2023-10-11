@@ -1,23 +1,40 @@
 {
+  "name": "getkirby/starterkit",
+  "description": "Kirby Starterkit",
+  "type": "project",
+  "keywords": [
+    "kirby",
+    "cms",
+    "starterkit"
+  ],
+  "authors": [
+    {
+      "name": "Bastian Allgeier",
+      "email": "bastian@getkirby.com",
+      "homepage": "https://getkirby.com"
+    }
+  ],
+  "homepage": "https://getkirby.com",
+  "support": {
+    "email": "support@getkirby.com",
+    "issues": "https://github.com/getkirby/starterkit/issues",
+    "forum": "https://forum.getkirby.com",
+    "source": "https://github.com/getkirby/starterkit"
+  },
   "require": {
-    "getkirby/cms": "^3.9",
-    "getkirby/kql": "^2.0",
-    "johannschopplich/kirby-helpers": "^4.1",
-    "johannschopplich/kirby-headless": "^2.0"
+    "php": ">=8.0.0 <8.3.0",
+    "getkirby/cms": "^3.8"
+  },
+  "config": {
+    "allow-plugins": {
+      "getkirby/composer-installer": true
+    },
+    "optimize-autoloader": true
   },
   "scripts": {
     "start": [
       "Composer\\Config::disableProcessTimeout",
-      "@php -S localhost:8000 -t public vendor/getkirby/cms/router.php"
+      "@php -S localhost:8000 kirby/router.php"
     ]
-  },
-  "config": {
-    "optimize-autoloader": true,
-    "allow-plugins": {
-      "getkirby/composer-installer": true
-    }
-  },
-  "extra": {
-    "kirby-cms-path": false
   }
 }
